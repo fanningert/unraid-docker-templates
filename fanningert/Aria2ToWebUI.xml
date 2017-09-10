@@ -3,7 +3,7 @@
   <Date>2017-09-10</Date>
   <Beta>True</Beta>
   <Category>Downloaders:</Category>
-  <Name>Aria2WebUI</Name>
+  <Name>aria2webui</Name>
   <Project>https://github.com/fanningert/unraid-aria2-with-webui</Project>
   <Changes>
 [center][font size=4]Sync Change Log[/font][/center]
@@ -20,39 +20,58 @@
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>6880</HostPort>
-        <ContainerPort>80</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Data>
-    <Volume>
-      <HostDir></HostDir>
-      <ContainerDir>/data</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/appdata/aria2-with-webui</HostDir>
-      <ContainerDir>/config</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
   <WebUI>http://[IP]:[PORT:6880]/</WebUI>
   <Icon></Icon>
 
   <Network Default="bridge">bridge</Network>
 
-  <Config Type="Port" Name="Aria2 WebUI Port" Target="6800" Default="6800" Mode="tcp" Display="always-hide" Required="true"
-       Description="aria2-webui port">6880</Config>
+  <Config 
+	Type="Port" 
+	Name="Aria2 WebUI Port" 
+	Target="80" 
+	Default="6880" 
+	Mode="tcp" 
+	Display="always" 
+	Required="true"
+	Description="aria2-webui port">6880</Config>
 
-  <Config Type="Path" Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/Sync" Mode="rw" Display="advanced-hide" Required="true"
-       Description="">/mnt/user/appdata/Sync</Config>
+  <Config 
+	Type="Port" 
+	Name="Aria2 RPC" 
+	Target="6800" 
+	Default="6800" 
+	Mode="tcp" 
+	Display="advanced" 
+	Required="true"
+	Description="aria2 rpc port">6800</Config>
 
-  <Config Type="Path" Name="Download Storage Path" Target="/data" Default="" Mode="rw" Display="always-hide" Required="true"
-       Description=""></Config>
+  <Config 
+	Type="Path" 
+	Name="Config Storage Path" 
+	Target="/config" 
+	Default="/mnt/user/appdata/aria2-with-webui" 
+	Mode="rw" 
+	Display="advanced" 
+	Required="true"
+	Description="">/mnt/user/appdata/aria2-with-webui</Config>
+
+  <Config 
+	Type="Path" 
+	Name="Download Storage Path" 
+	Target="/data" 
+	Default="" 
+	Description=""
+	Mode="rw" 
+	Display="always" 
+	Required="true"></Config>
+
+   <Config 
+       Type="Variable" 
+       Name="Aria2 Secret" 
+       Target="SECRET" 
+       Default="YOUR_SECRET_CODE" 
+       Description="Plex Pass Username" 
+       Mask="false" 
+       Display="always" 
+       Required="true"></Config>
 </Container>
