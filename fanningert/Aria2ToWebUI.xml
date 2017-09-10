@@ -4,7 +4,7 @@
   <Beta>True</Beta>
   <Category>Downloaders:</Category>
   <Name>Aria2WebUI</Name>
-  <Project>https://github.com/XUJINKAI/aria2-with-webui</Project>
+  <Project>https://github.com/fanningert/unraid-aria2-with-webui</Project>
   <Changes>
 [center][font size=4]Sync Change Log[/font][/center]
 
@@ -13,9 +13,9 @@
   </Changes>
   <Overview>The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just download and open index.html in any web browser.</Overview>
   <Description>The aim for this project is to create the worlds best and hottest interface to interact with aria2. aria2 is the worlds best file downloader, but sometimes the command line brings more power than necessary. The project was initially created as part of the GSOC scheme, however it has rapidly grown and changed with tremendous support and feedback from the aria2 community.</Description>
-  <Registry>https://registry.hub.docker.com/u/xujinkai/aria2-with-webui/</Registry>
-  <GitHub>https://github.com/XUJINKAI/aria2-with-webui</GitHub>
-  <Repository>xujinkai/aria2-with-webui</Repository>
+  <Registry>https://registry.hub.docker.com/u/fanningert/unraid-aria2-with-webui/</Registry>
+  <GitHub>https://github.com/fanningert/unraid-aria2-with-webui</GitHub>
+  <Repository>fanningert/unraid-aria2-with-webui</Repository>
   <Support>http://lime-technology.com/forum/index.php?topic=40654.0</Support>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
@@ -24,18 +24,8 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>6800</HostPort>
-        <ContainerPort>6800</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>6888</HostPort>
-        <ContainerPort>6888</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
         <HostPort>6880</HostPort>
-        <ContainerPort>6880</ContainerPort>
+        <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
@@ -52,19 +42,13 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:6800]/</WebUI>
+  <WebUI>http://[IP]:[PORT:6880]/</WebUI>
   <Icon></Icon>
 
   <Network Default="bridge">bridge</Network>
 
   <Config Type="Port" Name="Aria2 WebUI Port" Target="6800" Default="6800" Mode="tcp" Display="always-hide" Required="true"
-       Description="aria2-webui port">6800</Config>
-
-  <Config Type="Port" Name="Data Folder Browsing Port" Target="6888" Default="6888" Mode="tcp" Display="advanced-hide" Required="true"
-       Description="For data folder browse">6888</Config>
-
-  <Config Type="Port" Name="HOST_PORT3" Target="6880" Default="6880" Mode="tcp" Display="advanced-hide" Required="true"
-       Description="This is Sync's UDP port for data transfers.">6880</Config>
+       Description="aria2-webui port">6880</Config>
 
   <Config Type="Path" Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/Sync" Mode="rw" Display="advanced-hide" Required="true"
        Description="">/mnt/user/appdata/Sync</Config>
