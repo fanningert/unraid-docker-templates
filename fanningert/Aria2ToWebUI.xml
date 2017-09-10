@@ -6,7 +6,7 @@
   <Name>aria2webui</Name>
   <Project>https://github.com/fanningert/unraid-aria2-with-webui</Project>
   <Changes>
-[center][font size=4]Sync Change Log[/font][/center]
+[center][font size=4]Aria2WebUI Change Log[/font][/center]
 
 [font size=3]2017.09.10[/font]
 - Initial Release
@@ -16,7 +16,7 @@
   <Registry>https://registry.hub.docker.com/u/fanningert/unraid-aria2-with-webui/</Registry>
   <GitHub>https://github.com/fanningert/unraid-aria2-with-webui</GitHub>
   <Repository>fanningert/unraid-aria2-with-webui</Repository>
-  <Support>http://lime-technology.com/forum/index.php?topic=40654.0</Support>
+  <Support />
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
@@ -58,7 +58,17 @@
   <Config 
 	Type="Path" 
 	Name="Download Storage Path" 
-	Target="/data" 
+	Target="/download" 
+	Default="" 
+	Description=""
+	Mode="rw" 
+	Display="always" 
+	Required="true"></Config>
+
+  <Config 
+	Type="Path" 
+	Name="Finished Storage Path" 
+	Target="/finished" 
 	Default="" 
 	Description=""
 	Mode="rw" 
