@@ -4,24 +4,22 @@
   <Beta>True</Beta>
   <Category>Downloaders:</Category>
   <Name>aria2webui</Name>
-  <Project>https://github.com/fanningert/unraid-aria2-with-webui</Project>
-  <Changes>
-[center][font size=4]Aria2WebUI Change Log[/font][/center]
-
+  <Project>https://github.com/fanningert/aria2-with-webui</Project>
+  <Changes>[center][font size=4]Aria2WebUI Change Log[/font][/center]
 [font size=3]2017.09.10[/font]
 - Initial Release
   </Changes>
   <Overview>The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just download and open index.html in any web browser.</Overview>
   <Description>The aim for this project is to create the worlds best and hottest interface to interact with aria2. aria2 is the worlds best file downloader, but sometimes the command line brings more power than necessary. The project was initially created as part of the GSOC scheme, however it has rapidly grown and changed with tremendous support and feedback from the aria2 community.</Description>
-  <Registry>https://registry.hub.docker.com/u/fanningert/unraid-aria2-with-webui/</Registry>
-  <GitHub>https://github.com/fanningert/unraid-aria2-with-webui</GitHub>
-  <Repository>fanningert/unraid-aria2-with-webui</Repository>
+  <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
+  <GitHub>https://github.com/fanningert/aria2-with-webui</GitHub>
+  <Repository>fanningert/aria2-with-webui</Repository>
   <Support />
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
   <WebUI>http://[IP]:[PORT:6880]/</WebUI>
-  <Icon></Icon>
+  <Icon>https://github.com/fanningert/unraid-docker-templates/fanningert/icons/aria2webui.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
@@ -80,7 +78,7 @@
        Name="Aria2 Secret" 
        Target="SECRET" 
        Default="YOUR_SECRET_CODE" 
-       Description="Plex Pass Username" 
+       Description="Aria2 RPC Secret" 
        Mask="false" 
        Display="always" 
        Required="true"></Config>
