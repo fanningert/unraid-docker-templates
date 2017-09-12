@@ -19,7 +19,7 @@
   <Privileged>false</Privileged>
   <Environment/>
   <WebUI>http://[IP]:[PORT:6880]/</WebUI>
-  <Icon>https://github.com/fanningert/unraid-docker-templates/fanningert/icons/aria2webui.png</Icon>
+  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/aria2webui.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
