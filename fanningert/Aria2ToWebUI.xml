@@ -1,85 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <Container version="2">
-  <Date>2017-09-10</Date>
-  <Beta>True</Beta>
-  <Category>Downloaders:</Category>
   <Name>aria2webui</Name>
-  <Project>https://github.com/fanningert/aria2-with-webui</Project>
-  <Changes>[center][font size=4]Aria2WebUI Change Log[/font][/center]
+  <Beta>True</Beta>
+  <Repository>fanningert/aria2-with-webui</Repository>
+  <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Date>2017-09-13</Date>
+  <Changes>
+[center][font size=4]Aria2WebUI Change Log[/font][/center]
+[font size=3]2017.09.13[/font]
+- Update template xml
 [font size=3]2017.09.10[/font]
 - Initial Release
   </Changes>
-  <Overview>The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just download and open index.html in any web browser.</Overview>
-  <Description>The aim for this project is to create the worlds best and hottest interface to interact with aria2. aria2 is the worlds best file downloader, but sometimes the command line brings more power than necessary. The project was initially created as part of the GSOC scheme, however it has rapidly grown and changed with tremendous support and feedback from the aria2 community.</Description>
-  <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
-  <GitHub>https://github.com/fanningert/aria2-with-webui</GitHub>
-  <Repository>fanningert/aria2-with-webui</Repository>
-  <Support />
-  <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
-  <Environment/>
-  <WebUI>http://[IP]:[PORT:6880]/</WebUI>
+  <Support>https://forums.lime-technology.com/topic/60117-support-aria2-webui/</Support>
+  <Overview>
+The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just download and open index.html in any web browser.
+</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:6880]</WebUI>
+  <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/aria2webui.png</Icon>
-
-  <Network Default="bridge">bridge</Network>
-
-  <Config 
-	Type="Port" 
-	Name="Aria2 WebUI Port" 
-	Target="80" 
-	Default="6880" 
-	Mode="tcp" 
-	Display="always" 
-	Required="true"
-	Description="aria2-webui port">6880</Config>
-
-  <Config 
-	Type="Port" 
-	Name="Aria2 RPC" 
-	Target="6800" 
-	Default="6800" 
-	Mode="tcp" 
-	Display="advanced" 
-	Required="true"
-	Description="aria2 rpc port">6800</Config>
-
-  <Config 
-	Type="Path" 
-	Name="Config Storage Path" 
-	Target="/config" 
-	Default="/mnt/user/appdata/aria2-with-webui" 
-	Mode="rw" 
-	Display="advanced" 
-	Required="true"
-	Description="">/mnt/user/appdata/aria2-with-webui</Config>
-
-  <Config 
-	Type="Path" 
-	Name="Download Storage Path" 
-	Target="/download" 
-	Default="" 
-	Description=""
-	Mode="rw" 
-	Display="always" 
-	Required="true"></Config>
-
-  <Config 
-	Type="Path" 
-	Name="Finished Storage Path" 
-	Target="/finished" 
-	Default="" 
-	Description=""
-	Mode="rw" 
-	Display="always" 
-	Required="true"></Config>
-
-   <Config 
-       Type="Variable" 
-       Name="Aria2 Secret" 
-       Target="SECRET" 
-       Default="YOUR_SECRET_CODE" 
-       Description="Aria2 RPC Secret" 
-       Mask="false" 
-       Display="always" 
-       Required="true"></Config>
+  <ExtraParams/>
+  <Description>
+The aim for this project is to create the worlds best and hottest interface to interact with aria2. aria2 is the worlds best file downloader, but sometimes the command line brings more power than necessary. The project was initially created as part of the GSOC scheme, however it has rapidly grown and changed with tremendous support and feedback from the aria2 community.
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6880</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/aria2-with-webui</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/download</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/finished</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>6800</HostDir>
+      <ContainerDir>6800</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>SECRET</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="Aria2 Secret" Target="SECRET" Default="YOUR_SECRET_CODE" Mode="" Description="Aria2 RPC Secret" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/aria2-with-webui" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/aria2-with-webui</Config>
+  <Config Name="Download Storage Path" Target="/download" Default="" Mode="rw" Description="Container Path: /download" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Finished Storage Path" Target="/finished" Default="" Mode="rw" Description="Container Path: /finished" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Aria2 WebUI Port" Target="80" Default="6880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6880</Config>
+  <Config Name="Aria2 RPC" Target="6800" Default="6800" Mode="rw" Description="Container Path: 6800" Type="Path" Display="always" Required="true" Mask="false">6800</Config>
 </Container>
