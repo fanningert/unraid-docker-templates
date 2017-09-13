@@ -34,6 +34,11 @@ The aim for this project is to create the worlds best and hottest interface to i
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
+      <Port>
+        <HostPort>6800</HostPort>
+        <ContainerPort>6800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
     </Publish>
   </Networking>
   <Data>
@@ -52,11 +57,6 @@ The aim for this project is to create the worlds best and hottest interface to i
       <ContainerDir>/finished</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-    <Volume>
-      <HostDir>6800</HostDir>
-      <ContainerDir>6800</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
   </Data>
   <Environment>
     <Variable>
@@ -70,5 +70,5 @@ The aim for this project is to create the worlds best and hottest interface to i
   <Config Name="Download Storage Path" Target="/download" Default="" Mode="rw" Description="Container Path: /download" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Finished Storage Path" Target="/finished" Default="" Mode="rw" Description="Container Path: /finished" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Aria2 WebUI Port" Target="80" Default="6880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6880</Config>
-  <Config Name="Aria2 RPC" Target="6800" Default="6800" Mode="rw" Description="Container Path: 6800" Type="Path" Display="always" Required="true" Mask="false">6800</Config>
+  <Config Name="Aria2 RPC" Target="6800" Default="6800" Mode="tcp" Description="Container Path: 6800" Type="Port" Display="always" Required="true" Mask="false">6800</Config>
 </Container>
