@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Gitea</Name>
+  <Beta>True</Beta>
   <Repository>fanningert/gitea</Repository>
   <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
   <Network>bridge</Network>
