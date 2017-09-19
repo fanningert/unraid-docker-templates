@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Cloud Commander</Name>
+  <Beta>True</Beta>
+  <Repository>coderaiser/cloudcmd:latest-alpine</Repository>
+  <Registry>https://registry.hub.docker.com/u/coderaiser/cloudcmd/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Date>2017-09-19</Date>
+  <Changes>
+[center][font size=4]Cloud Commander Change Log[/font][/center]
+[font size=3]2017.09.19[/font]
+- Initial Release
+  </Changes>
+  <Support>https://forums.lime-technology.com/topic/60258-support-cloud-commander/</Support>
+  <Overview>Cloud Commander is an orthodox web file manager with console and editor.</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/cloudcmd.png</Icon>
+  <ExtraParams/>
+  <Description>Cloud Commander is an orthodox web file manager with console and editor.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/</HostDir>
+      <ContainerDir>/mnt/fs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>false</Value>
+      <Name>cloudcmd_terminal</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>gritty</Value>
+      <Name>cloudcmd_terminal_path</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="Mount Root Path" Target="/mnt/fs" Default="/mnt/" Mode="rw" Description="Container Path: /mnt/fs" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Terminal active" Target="cloudcmd_terminal" Default="false" Mode="" Description="Terminal active" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Terminal path" Target="cloudcmd_terminal_path" Default="gritty" Mode="" Description="Terminal path" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+</Container>
