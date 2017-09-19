@@ -30,13 +30,6 @@
       </Port>
     </Publish>
   </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/gitea</HostDir>
-      <ContainerDir>/data</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
   <Environment/>
   <Config Name="GUACD port" Target="4822" Default="4822" Mode="tcp" Description="Container Port: 4822" Type="Port" Display="always" Required="true" Mask="false">4822</Config>
 </Container>
