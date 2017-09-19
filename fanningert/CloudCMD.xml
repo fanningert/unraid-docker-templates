@@ -36,6 +36,11 @@
       <ContainerDir>/mnt/fs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/cloudcmd</HostDir>
+      <ContainerDir>/root</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
   </Data>
   <Environment>
     <Variable>
@@ -61,6 +66,7 @@
   </Environment>
   <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="Mount Root Path" Target="/mnt/fs" Default="/mnt/" Mode="rw" Description="Container Path: /mnt/fs" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Root Path" Target="/root" Default="/mnt/user/appdata/cloudcmd" Mode="rw" Description="Root Path: /root" Type="Path" Display="advanced" Required="true" Mask="false"/>
   <Config Name="Root directory" Target="CLOUDCMD_ROOT" Default="/mnt/fs" Mode="" Description="set root directory" Type="Variable" Display="advanced" Required="true" Mask="false"/>
   <Config Name="Enable console" Target="CLOUDCMD_CONSOLE" Default="false" Mode="" Description="enable console" Type="Variable" Display="advanced" Required="true" Mask="false"/>
   <Config Name="Enable terminal" Target="cloudcmd_terminal" Default="false" Mode="" Description="enable terminal" Type="Variable" Display="advanced" Required="true" Mask="false"/>
