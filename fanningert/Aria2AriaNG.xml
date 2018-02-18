@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>aria2webui</Name>
-  <Repository>fanningert/aria2-with-webui</Repository>
-  <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
+  <Name>aria2-with-ariang</Name>
+  <Repository>fanningert/aria2-with-ariang</Repository>
+  <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-ariang/</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Privileged>false</Privileged>
@@ -14,7 +14,7 @@ The aim for this project is to create the worlds best and hottest interface to i
   <Category>Downloaders:</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/aria2webui.png</Icon>
+  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/aria2ariang.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <DonateText/>
@@ -56,7 +56,7 @@ The aim for this project is to create the worlds best and hottest interface to i
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/aria2-with-webui/</HostDir>
+      <HostDir>/mnt/user/appdata/aria2-with-ariang/</HostDir>
       <ContainerDir>/conf</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -182,7 +182,7 @@ The aim for this project is to create the worlds best and hottest interface to i
   <Config Name="Aria2 - DHT Listen Port" Target="6881" Default="6881" Mode="tcp" Description="Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together. You also need to change the Variable " Type="Port" Display="always" Required="false" Mask="false">6881</Config>
   <Config Name="User ID" Target="PUID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="Group ID" Target="PGID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
-  <Config Name="Config Storage Path" Target="/conf" Default="/mnt/user/appdata/aria2-with-webui" Mode="rw" Description="Container Path: /conf" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/aria2-with-webui/</Config>
+  <Config Name="Config Storage Path" Target="/conf" Default="/mnt/user/appdata/aria2-with-ariang" Mode="rw" Description="Container Path: /conf" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/aria2-with-ariang/</Config>
   <Config Name="Aria2 - Listen Port (aria2.conf)" Target="aria2ListenPort" Default="6889" Mode="" Description="Set TCP port number for BitTorrent downloads. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together: 6881-6889,6999." Type="Variable" Display="advanced" Required="true" Mask="false">6889</Config>
   <Config Name="Aria2 - Enable DHT" Target="aria2EnableDht" Default="true|false" Mode="" Description="Enable IPv4 DHT functionality. It also enables UDP tracker support. If a private flag is set in a torrent, aria2 doesn&#x2019;t use DHT for that download even if true is given." Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="Aria2 - DHT Listen Port (aria2.conf)" Target="aria2DhtListenPort" Default="6881" Mode="" Description="Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together." Type="Variable" Display="advanced" Required="true" Mask="false">6881</Config>
